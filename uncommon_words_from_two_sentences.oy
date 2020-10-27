@@ -1,0 +1,11 @@
+from collections import Counter
+class Solution:
+    def uncommonFromSentences(self, A: str, B: str) -> List[str]:
+        words_list = list(A.split())
+        words_list.extend(list(B.split()))
+        words_count = Counter(words_list)
+        result = []
+        for w in words_count:
+            if words_count[w] == 1:
+                result.append(w)
+        return result
